@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{"username": "tema", "password": "123tema"}
+
+###
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{"username": "tema", "password": "123tema", "email": "tema@gmail.com"}
+
+###
+
+GET http://127.0.0.1:8000/test_token
+Content-Type: application/json
+Authorization: Token 5e06031926fbc1988d1e0dcdfd165d4c9980fd3a
+
+{}
