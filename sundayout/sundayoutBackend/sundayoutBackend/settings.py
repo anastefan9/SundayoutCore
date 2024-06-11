@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
+AUTH_USER_MODEL = 'authentication.User'
+
 
 # Application definition
 
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', 
     'rest_framework.authtoken', 
-    #"django_extensions",
+    'authentication',
 ]
 
 MIDDLEWARE = [
