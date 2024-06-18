@@ -7,7 +7,8 @@ from . import views
 urlpatterns = [
    re_path('login', views.login),
    re_path('signup', views.signup),
-   re_path('test_token', views.test_token)
+   re_path('test_token', views.test_token),
+   re_path('fetch_businesses_data', views.fetch_businesses_data)
 ]
 
 # we want to map those views to certain routes with our urls

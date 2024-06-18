@@ -17,7 +17,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-# Create your models here.
 class User(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
     firstName = models.CharField(max_length=30)

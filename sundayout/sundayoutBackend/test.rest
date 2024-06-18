@@ -8,12 +8,19 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/signup
 Content-Type: application/json
 
-{"firstName": "ingrid", "lastName": "dove", "email": "ingrid@gmail.com", "password": "123tesa"}
+{"firstName": "andra", "lastName": "avene", "email": "andra@gmail.com", "password": "123abcd"}
 
 ###
 
 GET http://127.0.0.1:8000/test_token
 Content-Type: application/json
 Authorization: Token 5e06031926fbc1988d1e0dcdfd165d4c9980fd3a
+
+{}
+
+###
+
+GET http://127.0.0.1:8000/fetch_businesses_data
+Content-Type: application/json
 
 {}

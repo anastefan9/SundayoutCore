@@ -1,8 +1,8 @@
 # this will allow us to run python code for any api whenever it gets called
-
+import requests
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from authentication.models import User
@@ -36,3 +36,16 @@ from rest_framework.permissions import IsAuthenticated
 @permission_classes([IsAuthenticated])
 def test_token(request): 
     return Response("passed for {}".format(request.user.email)) 
+
+@api_view(['GET'])
+def fetch_businesses_data(request):
+    businessServerUrl = 'http://127.0.0.1:8080/get_businesses'
+    try:
+        response = requests.get(businessServerUrl)
+        if response.status_code == 200:
+            data = response.json()
+            return JsonResponse(data, safe=False)
+        else:
+            return JsonResponse({'error': 'Failed to fetch data from business server'}, status = 500)
+    except requests.exceptions.RequestException as e:
+        return JsonResponse({'error': str(e)}, status=500)
